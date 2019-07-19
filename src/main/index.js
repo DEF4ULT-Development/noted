@@ -20,6 +20,7 @@ function createWindow () {
         devTools: true            
     },
     frame: false,
+    alwaysOnTop:true
     //titleBarStyle: 'hidden'
 })
 
