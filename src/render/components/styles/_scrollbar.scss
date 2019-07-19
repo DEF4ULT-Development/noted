@@ -1,0 +1,18 @@
+::-webkit {
+  &-scrollbar{
+    width: 10px;
+    height: 10px;
+
+    &-thumb{
+      background: #aaa;
+    }
+
+    &-track{
+      background:#eee;
+    }
+  }
+  &-resizer,
+  &-scrollbar-corner {
+    background: #eee;
+  }
+}

@@ -1,0 +1,5 @@
+export const MUTATION = {
+  TASKS: 'TASKS',
+  SETTINGS: 'SETTINGS',
+  LOCALE: 'LOCALE'
+}

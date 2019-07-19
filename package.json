@@ -1,0 +1,63 @@
+{
+  "name": "electron-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron dist/",
+    "build": "yarn build:main && yarn build:render",
+    "build:main": "parcel build src/main/index.js --target node",
+    "build:render": "parcel build src/render/index.pug --target electron --public-url ./ --no-content-hash=true",
+    "dev": "yarn build && yarn start",
+    "watch": "parcel watch src/render/index.pug --target electron --public-url ./",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/pro-regular-svg-icons": "^5.9.0",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "dexie": "^2.0.4",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-i18n": "^8.12.0",
+    "vue-router": "^3.0.6",
+    "vuex": "^3.1.1"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-pro": "^5.9.0",
+    "@vue/component-compiler-utils": "^3.0.0",
+    "electron": "^5.0.2",
+    "electron-builder": "^21.0.15",
+    "parcel": "^1.12.3",
+    "parcel-plugin-imagemin": "^3.0.0",
+    "parcel-plugin-static-files-copy": "^2.1.1",
+    "pug": "^2.0.3",
+    "sass": "^1.20.1",
+    "vue-devtools": "^5.0.0-beta.1",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "staticFiles": {
+    "staticPath": "src/static",
+    "watcherGlob": "**"
+  },
+  "alias": {
+    "components/*": "src/render/components"
+  },
+  "build": {
+    "appId": "design.lost.noted",
+    "productName": "noted",
+    "copyright": "Copyright © 2019 ${author}",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "portable"
+    },
+    "directories": {
+      "app": "dist",
+      "output": "built"
+    }
+  }
+}
