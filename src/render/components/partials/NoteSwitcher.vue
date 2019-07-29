@@ -1,6 +1,17 @@
 <template lang="pug">
-  h1 noted.
+  h1(@click="changeNote") noted.
 </template>
+
+<script>
+export default {
+  methods: {
+    changeNote() {
+      console.log('hi')
+    }
+  }
+}
+</script>
+
 
 
 <style lang="scss">
